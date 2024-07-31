@@ -23,3 +23,14 @@ video#filme {
   top: 85px;
   width: 440px;
 }
+
+video#movie1 {
+  position: relative;
+  left: 31px;
+  height: 250px;
+  bottom: 7px;
+}
+
+video#movie2 {
+  width: 350px;
+}
