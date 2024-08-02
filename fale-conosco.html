@@ -53,22 +53,23 @@
         <form>
             <fieldset id="usuario">
                 <legend>Identificação do Usuário</legend>
-                    <p>Nome:</p>
-                    <p>Senha:</p>
-                    <p>E-mail:</p>
+                    <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+                    <p><label for="nSenha">Senha:</label><input type="password" name="tSenha" id="nSenha" size="8" maxlength="8" placeholder="Insira sua Senha"/></p>
+                    <p><label for="cMail">E-mail:</label><input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="Insira seu E-mail"/></p>
                     <fieldset id="sexo">
                         <legend>Sexo:</legend>
-                            - Masculino
-                            - Feminino</fieldset>
+                            <input type="radio" name="tSexo" id="cMasc"> <label for="cMasc">Masculino</label><br><!--* label === etiqueta -->
+                            <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label>
+                        </fieldset>
                         <p>Data de Nascimento:</p>
             </fieldset>
-    
+
             <fieldset id="endereco">
                 <legend>Endereço do Usuário</legend>
-                    Logradouro:
-                    Número:
-                    Estado:
-                    Cidade:
+                    <p><label for="cLog">Logradouro:</label><input type="text" name="tLog" id="cLog" size="20" maxlength="40" placeholder="Insira seu Longradouro" /></p>
+                    <p><label for="cNum">Número:</label><input type="number" name="tNum" id="cNum" size="20" maxlength="5" placeholder="Insira seu Número"/></p>
+                    <p><label for="nEstado">Estado:</label><input type="text" name="tEstado" id="nEstado" size="20" maxlength="50" placeholder="Insira seu Estado"/></p>
+                    <p>Cidade:</p>
             </fieldset>
     
             <fieldset id="mensagem">
