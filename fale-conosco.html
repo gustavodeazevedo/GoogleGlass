@@ -50,7 +50,8 @@
             </hgroup>
         </header>
     
-        <form>
+        <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com">
+
             <fieldset id="usuario">
                 <legend>Identificação do Usuário</legend>
                     <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
@@ -68,14 +69,127 @@
                 <legend>Endereço do Usuário</legend>
                     <p><label for="cLog">Logradouro:</label><input type="text" name="tLog" id="cLog" size="20" maxlength="80" placeholder="Insira sua Rua/Avenida" /></p>
                     <p><label for="cNum">Número:</label><input type="number" name="tNum" id="cNum" size="20" min="0" max="9999" placeholder="Insira seu Número"/></p>
-                    <p><label for="nEstado">Estado:</label><input type="text" name="tEstado" id="nEstado" size="20" maxlength="50" placeholder="Insira seu Estado"/></p>
-                    <p><label for="nCity">Cidade:</label><input type="text" name="tCity" id="nCity" size="20" maxlength="60" placeholder="Insira o sua Cidade"/></p>
+                    <p>
+                        <label for="cEst">Estado:</label>
+                        <select name="tEst" id="cEst">
+                            <optgroup label="Região Norte">
+                                <option value="AC">Acre</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="PA">Pará</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="TO">Tocantins</option>
+                            </optgroup>
+                            <optgroup label="Região Nordeste">
+                                <option value="AL">Alagoas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="SE">Sergipe</option>
+                            </optgroup>
+                            <optgroup label="Região Centro-Oeste">
+                                <option value="GO">Goiás</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="DF">Distrito Federal</option>
+                            </optgroup>
+                            <optgroup label="Região Sudeste">
+                                <option value="ES">Espírito Santo</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option selected value="SP">São Paulo</option>
+                            </optgroup>
+                            <optgroup label="Região Sul">
+                                <option value="PR">Paraná</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="SC">Santa Catarina</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    
+                    <p>
+                        <label for="cCid">Cidade:</label>
+                        <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidade"/>
+                    </p>
+                    <datalist id="cidade">
+                        <!-- Região Norte -->
+                        <option value="Rio Branco"></option>
+                        <option value="Macapá"></option>
+                        <option value="Manaus"></option>
+                        <option value="Belém"></option>
+                        <option value="Porto Velho"></option>
+                        <option value="Boa Vista"></option>
+                        <option value="Palmas"></option>
+                        <option value="Santarém"></option>
+                        <option value="Marabá"></option>
+                    
+                        <!-- Região Nordeste -->
+                        <option value="Maceió"></option>
+                        <option value="Salvador"></option>
+                        <option value="Fortaleza"></option>
+                        <option value="São Luís"></option>
+                        <option value="João Pessoa"></option>
+                        <option value="Recife"></option>
+                        <option value="Teresina"></option>
+                        <option value="Natal"></option>
+                        <option value="Aracaju"></option>
+                        <option value="Campina Grande"></option>
+                        <option value="Petrolina"></option>
+                        <option value="Mossoró"></option>
+                        <option value="Feira de Santana"></option>
+                    
+                        <!-- Região Centro-Oeste -->
+                        <option value="Goiânia"></option>
+                        <option value="Cuiabá"></option>
+                        <option value="Campo Grande"></option>
+                        <option value="Brasília"></option>
+                        <option value="Anápolis"></option>
+                        <option value="Rondonópolis"></option>
+                        <option value="Dourados"></option>
+                    
+                        <!-- Região Sudeste -->
+                        <option value="Vitória"></option>
+                        <option value="Belo Horizonte"></option>
+                        <option value="Rio de Janeiro"></option>
+                        <option value="São Paulo"></option>
+                        <option value="Niterói"></option>
+                        <option value="Nova Iguaçu"></option>
+                        <option value="Ribeirão Preto"></option>
+                        <option value="Campinas"></option>
+                        <option value="Santos"></option>
+                        <option value="Sorocaba"></option>
+                        <option value="Uberlândia"></option>
+                        <option value="Juiz de Fora"></option>
+                        <option value="Contagem"></option>
+                    
+                        <!-- Região Sul -->
+                        <option value="Curitiba"></option>
+                        <option value="Porto Alegre"></option>
+                        <option value="Florianópolis"></option>
+                        <option value="Londrina"></option>
+                        <option value="Maringá"></option>
+                        <option value="Blumenau"></option>
+                        <option value="Joinville"></option>
+                        <option value="Caxias do Sul"></option>
+                        <option value="Pelotas"></option>
+                        <option value="Cruzaltense"></option>
+                        <option value="Campinas do Sul"></option>
+                    </datalist>
+                    
+
             </fieldset>
     
             <fieldset id="mensagem">
                 <legend>Mensagem do Usuário</legend>
-                    Grau de Urgência:
-                    Mensagem:
+                    <p><label for="cUrg">Grau de Urgência:</label>
+                    Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" />Max</p>
+                    <p><label for="cMsg">Mensagem:</label>
+                    <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
             </fieldset>
     
             <fieldset id="pedido">
